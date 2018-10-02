@@ -5,8 +5,13 @@ php:
   - 5.6
   - 7.0
 
+services:
+  - mysql
+
+before install:
+  mysql -e 'create database foro_test;'
 install:
-  composer install
+  composer install --prefer-source --no-interaction
 
 script:
   vendor/bin/phpunit
