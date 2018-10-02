@@ -6,11 +6,11 @@ php:
 services:
   - mysql
 
-before install:
+before_install:
   mysql -e 'create database foro_test;'
 
 install:
-  composer install 
+  composer install --prefer-source --no-interaction
 
 script:
   vendor/bin/phpunit
