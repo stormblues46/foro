@@ -8,8 +8,9 @@ services:
 
 before install:
   mysql -e 'create database foro_test;'
+
 install:
-  composer install --prefer-source --no-interaction
+  composer install 
 
 script:
   vendor/bin/phpunit
